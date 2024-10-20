@@ -1,0 +1,301 @@
+.main {
+  min-height: 100vh;
+  width: 100%;
+
+  background: 
+  url('./assets/background.png') no-repeat center center/cover,
+  #181818;
+
+  padding: 70px 100px;
+
+  display: grid;
+  grid-template-columns: minmax(250px, 1fr) minmax(250px, .5fr) minmax(250px, 1fr);
+
+}
+
+.button-page {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  width: max-content;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  border-radius: 10px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  row-gap: 64px;
+}
+
+.info-title {
+  font-size: 3vw;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.info-text {
+  font-size: 1vw;
+  font-weight: 400;
+  line-height: 1.7;
+  text-align: left;
+
+  max-width: 570px;
+}
+
+.info-promo {
+  font-size: 3vw;
+  font-weight: 900;
+  line-height: 55.27px;
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 18px;
+}
+
+.info-promo-span {
+  padding-left: 60px;
+  white-space: nowrap;
+}
+
+.portal-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.portal {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 200%;
+  bottom: 100%;
+}
+
+
+.portal-image {
+  position: absolute;
+  background: url('./assets/yama.png') center center/contain no-repeat;
+  bottom: -100%;
+  height: 100%;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  z-index: 2;
+  animation: yamaApperance 2s ease 3s forwards, yamaLevitate 1.5s ease-in-out alternate 5s infinite;
+}
+
+.portal-image-wrapper {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  z-index: 2;
+
+}
+
+.portal-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: black; 
+  border-radius: 50% /  0 0 100% 100% ;
+  transform: scale(0);
+  transform-origin: top;
+
+  animation: openPortal 1s 2s forwards, shrinkPortal 3s 5s ease forwards;
+
+  z-index: 100;
+}
+
+.portal-top {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  border-radius: 50% / 100% 100% 0 0 ;
+  width: 100%;
+  height: 50px;
+  background-color: black; 
+  transform: scale(0);
+  transform-origin: bottom;
+
+  animation: openPortal 1s 2s forwards, shrinkPortal 3s 5s ease forwards;
+  z-index: 1;
+}
+
+.helper {
+  position: relative;
+  width: 100%;
+  background: url('./assets/helper.png') center center/contain no-repeat;
+}
+
+.info-promo-l {
+  display: none;
+}
+
+@keyframes openPortal {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shrinkPortal {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.4);
+  }
+}
+
+@keyframes yamaApperance {
+  0% {
+    bottom: -100%;
+  } 
+  100% {
+    bottom: 10%;
+  }
+}
+
+@keyframes yamaLevitate {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(30px);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .portal-image {
+    height: 40%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .main {
+    padding: 35px 50px;
+  }
+
+  .info-title {
+    font-size: 42px;
+  }
+  
+  .info-text {
+    font-size: 18px;
+  }
+  
+  .info-promo {
+    font-size: 46px;
+
+  }
+
+  .portal-wrapper {
+    display: none;
+  }
+
+  .main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .info-promo-span {
+    white-space: unset;
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .portal-wrapper {
+    display: block;
+    margin: 0 auto;
+    width: 300px;
+  }
+
+  .info {
+    align-items: center;
+  }
+
+  .info-text {
+    text-align: center;
+  }
+
+  .info-title {
+    text-align: center;
+  }
+
+  .main {
+    padding: 32px;
+    grid-template-columns: 1fr; 
+  }
+
+  .info-promo {
+    display: none;
+  }
+
+  .portal {
+    display: flex;
+    height: 750px;
+    bottom: 0;
+  }
+
+  .portal-image {
+    height: 80%;
+  }
+  
+  .helper {
+    width: 450px;
+    height: 500px;
+    margin: 0 auto;
+  }
+
+  .info-promo-l {
+    display: flex;
+    flex-direction: column;
+    font-weight: 900;
+    font-size: 8vw;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .main {
+    padding: 16px;
+  }
+
+  .portal {
+    height: 80vh;
+  }
+
+  .helper {
+    width: 100%;
+    height: unset;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .portal-wrapper {
+    width: 250px;
+  }
+
+  .info-promo-l {
+    font-size: 15vw;
+  }
+}
