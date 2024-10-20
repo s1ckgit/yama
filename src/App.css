@@ -275,12 +275,16 @@
 }
 
 @media screen and (max-width: 475px) {
+  .info {
+    row-gap: 16px;
+  }
+
   .main {
     padding: 16px;
   }
 
   .portal {
-    height: 80vh;
+    height: 100vh;
   }
 
   .helper {

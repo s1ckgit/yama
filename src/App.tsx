@@ -5,7 +5,7 @@ import TABLETOP from './assets/table-top.png';
 import TABLEBOTTOM from './assets/table-bottom.png';
 
 function App() {
-  const [page, setPage] = useState('2');
+  const [page, setPage] = useState('1');
 
   const tableTopRef = useRef<HTMLImageElement>(null);
   const tableTopRef2 = useRef<HTMLImageElement>(null);

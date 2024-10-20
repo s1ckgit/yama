@@ -129,19 +129,19 @@
 
 @keyframes up {
   0% {
-    top: 5%;
+    top: 7%;
   }
   100% {
-    top: -5%;
+    top: -3%;
   }
 }
 
 @keyframes down {
   100% {
-    top: 5%;
+    top: 7%;
   }
   0% {
-    top: -5%;
+    top: -3%;
   }
 }
 
